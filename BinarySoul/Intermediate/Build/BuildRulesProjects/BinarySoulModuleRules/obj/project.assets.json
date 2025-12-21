@@ -2223,6 +2223,22 @@
           "bin/placeholder/EpicGames.UHT.dll": {}
         }
       },
+      "MarketplaceRules/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "EpicGames.Build": "1.0.0",
+          "UE5ProgramRules": "1.0.0",
+          "UE5Rules": "1.0.0",
+          "UnrealBuildTool": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/MarketplaceRules.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MarketplaceRules.dll": {}
+        }
+      },
       "UE5ProgramRules/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -7027,6 +7043,11 @@
       "path": "../../../../../../../Unreal/UE_5.7/Engine/Source/Programs/Shared/EpicGames.UHT/EpicGames.UHT.csproj",
       "msbuildProject": "../../../../../../../Unreal/UE_5.7/Engine/Source/Programs/Shared/EpicGames.UHT/EpicGames.UHT.csproj"
     },
+    "MarketplaceRules/1.0.0": {
+      "type": "project",
+      "path": "../../../../../../../Unreal/UE_5.7/Engine/Intermediate/Build/BuildRulesProjects/MarketplaceRules/MarketplaceRules.csproj",
+      "msbuildProject": "../../../../../../../Unreal/UE_5.7/Engine/Intermediate/Build/BuildRulesProjects/MarketplaceRules/MarketplaceRules.csproj"
+    },
     "UE5ProgramRules/1.0.0": {
       "type": "project",
       "path": "../../../../../../../Unreal/UE_5.7/Engine/Intermediate/Build/BuildRulesProjects/UE5ProgramRules/UE5ProgramRules.csproj",
@@ -7046,6 +7067,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "EpicGames.Build >= 1.0.0",
+      "MarketplaceRules >= 1.0.0",
       "UE5ProgramRules >= 1.0.0",
       "UE5Rules >= 1.0.0",
       "UnrealBuildTool >= 1.0.0"
@@ -7076,6 +7098,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\Unreal\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj": {
+              "projectPath": "D:\\Unreal\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\MarketplaceRules\\MarketplaceRules.csproj"
+            },
             "D:\\Unreal\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj": {
               "projectPath": "D:\\Unreal\\UE_5.7\\Engine\\Intermediate\\Build\\BuildRulesProjects\\UE5ProgramRules\\UE5ProgramRules.csproj"
             },

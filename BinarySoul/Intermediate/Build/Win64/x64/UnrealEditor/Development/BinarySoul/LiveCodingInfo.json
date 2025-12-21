@@ -1,5 +1,10 @@
 {
 	"RemapUnityFiles": 
 	{
+		"Module.BinarySoul.gen.cpp.obj": [
+			"BinaryGameInstance.gen.cpp.obj",
+			"BinarySoul.init.gen.cpp.obj",
+			"BinarySoulTypes.gen.cpp.obj"
+		]
 	}
 }

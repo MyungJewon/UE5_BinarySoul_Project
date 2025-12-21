@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <None Include="..\..\.vsconfig" />
     <None Include="..\..\BinarySoul.uproject" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -37,6 +38,21 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\BinarySoul\BinarySoul.h">
       <Filter>Source\BinarySoul</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BinarySoul\BinarySoulTypes.cpp">
+      <Filter>Source\BinarySoul</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\BinarySoulTypes.h">
+      <Filter>Source\BinarySoul</Filter>
+    </ClInclude>
+    <Filter Include="Source\BinarySoul\GameInstance">
+      <UniqueIdentifier>{02B219A8-2187-3E1E-8C14-28C2BF457D92}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\BinarySoul\GameInstance\BinaryGameInstance.cpp">
+      <Filter>Source\BinarySoul\GameInstance</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\GameInstance\BinaryGameInstance.h">
+      <Filter>Source\BinarySoul\GameInstance</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
