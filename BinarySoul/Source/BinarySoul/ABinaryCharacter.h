@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "BinarySoulTypes.h"
 #include "GameFramework/Character.h"
 #include "InputActionValue.h"
 #include "ABinaryCharacter.generated.h"
@@ -26,13 +27,6 @@ protected:
 	virtual void Tick(float DeltaTime) override;
 	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	
-	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Stats")
-	float MaxHealth;
-	
-	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Stats")
-	float CurrentHealth;
-	
 	bool bIsDead = false;
 public:	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,Category="Camera")
@@ -59,8 +53,17 @@ public:
 	UFUNCTION(BlueprintCallable, Category="Stats")
 	void UpdateMaxHealth(float Amount);
 	
+	UFUNCTION(BlueprintCallable, Category="Stats")
+	float GetCurrentHealth() const { return PlayerStats.CurrentHealth; }
+
+	UFUNCTION(BlueprintCallable, Category="Stats")
+	float GetMaxHealth() const { return PlayerStats.MaxHealth; }
+	
 	UFUNCTION(BlueprintImplementableEvent, Category="GameLogic")
 	void OnDeath();
+	
+	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Stats")
+	FPlayerStats PlayerStats;
 
 protected:
 	void Move(const FInputActionValue& Value);
