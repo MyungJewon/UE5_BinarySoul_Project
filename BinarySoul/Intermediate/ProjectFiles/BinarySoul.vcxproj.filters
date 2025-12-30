@@ -3,6 +3,7 @@
   <ItemGroup>
     <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\BinarySoul.sln.DotSettings.user" />
     <None Include="..\..\BinarySoul.uproject" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -62,6 +63,12 @@
       <Filter>Source\BinarySoul</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\BinarySoul\ABinaryChoiceButton.h">
+      <Filter>Source\BinarySoul</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BinarySoul\BinaryAnimInstance.cpp">
+      <Filter>Source\BinarySoul</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\BinaryAnimInstance.h">
       <Filter>Source\BinarySoul</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BinarySoul\BinaryGameInstance.cpp">

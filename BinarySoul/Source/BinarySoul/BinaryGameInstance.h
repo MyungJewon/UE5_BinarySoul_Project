@@ -6,6 +6,7 @@
 #include "BinarySoulTypes.h"
 #include "BinaryGameInstance.generated.h"
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FOnLEDDataChanged);
+
 UCLASS()
 class BINARYSOUL_API UBinaryGameInstance : public UGameInstance
 {

@@ -251,6 +251,7 @@
   <ItemGroup>
     <None Include="..\..\.gitignore"/>
     <None Include="..\..\.vsconfig"/>
+    <None Include="..\..\BinarySoul.sln.DotSettings.user"/>
     <None Include="..\..\BinarySoul.uproject"/>
     <None Include="..\..\Config\DefaultEditor.ini"/>
     <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini"/>
@@ -272,6 +273,10 @@
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <ClInclude Include="..\..\Source\BinarySoul\ABinaryChoiceButton.h"/>
+    <ClCompile Include="..\..\Source\BinarySoul\BinaryAnimInstance.cpp">
+      <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\BinaryAnimInstance.h"/>
     <ClCompile Include="..\..\Source\BinarySoul\BinaryGameInstance.cpp">
       <AdditionalIncludeDirectories>$(ClCompile_AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>

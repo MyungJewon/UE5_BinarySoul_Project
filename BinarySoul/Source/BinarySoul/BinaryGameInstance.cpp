@@ -3,6 +3,7 @@
 #include "BinarySoulTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "ABinaryCharacter.h"
+
 UBinaryGameInstance::UBinaryGameInstance()
 {
 	LED_Array.Init(EFactionColor::None, 10);

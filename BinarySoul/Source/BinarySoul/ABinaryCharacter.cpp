@@ -61,14 +61,17 @@ void AABinaryCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputCo
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AABinaryCharacter::Look);
 
 		EnhancedInputComponent->BindAction(InteractAction, ETriggerEvent::Started, this, &AABinaryCharacter::Interact);
+		
+		EnhancedInputComponent->BindAction(AttackAction, ETriggerEvent::Started, this, &AABinaryCharacter::Attack);
 	}
 
 }
 
 void AABinaryCharacter::Move(const FInputActionValue& Value)
 {
-	FVector2D MovementVector = Value.Get<FVector2D>();
+	if (bIsAttacking) return;
 
+	FVector2D MovementVector = Value.Get<FVector2D>();
 	if (Controller != nullptr)
 	{
 		const FRotator Rotation = Controller->GetControlRotation();
@@ -116,6 +119,40 @@ void AABinaryCharacter::Interact()
 			}
 		}
 	}
+}
+void AABinaryCharacter::Attack()
+{
+	if (bIsDead || bIsAttacking) return;
+
+	if (AttackAnim)
+	{
+		// 2. 공격 상태로 변경 (이동 차단용)
+		bIsAttacking = true;
+
+		// 3. 움직임 강제 정지 (소울라이크 맛)
+		GetCharacterMovement()->StopMovementImmediately();
+
+		// 4. [핵심] 몽타주 없이 애니메이션 '직접' 재생!
+		// (Looping은 false로 설정해서 한 번만 재생)
+		GetMesh()->PlayAnimation(AttackAnim, false);
+
+		// 5. 애니메이션 길이만큼 타이머 설정
+		// (애니메이션이 1.5초짜리면, 1.5초 뒤에 OnAttackFinished를 실행해라!)
+		float AnimDuration = AttackAnim->GetPlayLength();
+		GetWorldTimerManager().SetTimer(AttackTimerHandle, this, &AABinaryCharacter::OnAttackFinished, AnimDuration, false);
+
+		UE_LOG(LogTemp, Warning, TEXT("Attack Start! (Duration: %f)"), AnimDuration);
+	}
+}
+void AABinaryCharacter::OnAttackFinished()
+{
+	// 공격 상태 해제 -> 이제 다시 움직일 수 있음
+	bIsAttacking = false;
+    
+	// 원래의 애니메이션 블루프린트 상태(Idle/Run)로 복귀
+	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+    
+	UE_LOG(LogTemp, Warning, TEXT("Attack Finished!"));
 }
 void AABinaryCharacter::UpdateHealth(float HealthAmount)
 {

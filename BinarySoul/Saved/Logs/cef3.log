@@ -1,4 +1,4 @@
-[23164:32020:1230/162307.084:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
-[23164:32020:1230/162307.166:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
-[23164:32020:1230/162311.162:WARNING:external_registry_loader_win.cc(232)] Error observing HKLM: 5
-[23164:32020:1230/165114.532:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[8908:20756:1230/234015.894:WARNING:chrome_main_delegate.cc(745)] This is Chrome version 128.0.6613.138 (not a warning)
+[8908:20756:1230/234015.938:WARNING:account_consistency_mode_manager.cc(77)] Desktop Identity Consistency cannot be enabled as no OAuth client ID and client secret have been configured.
+[8908:20756:1230/234018.937:WARNING:external_registry_loader_win.cc(232)] Error observing HKLM: 5
+[8908:20756:1231/001800.370:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

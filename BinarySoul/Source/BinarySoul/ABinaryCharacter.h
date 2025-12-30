@@ -46,6 +46,11 @@ public:
 	
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Input")
 	UInputAction* InteractAction;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UInputAction* AttackAction;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Animation")
+	UAnimSequence* AttackAnim;
 	
 	UFUNCTION(BlueprintCallable, Category="Stats")
 	void UpdateHealth(float Amount);
@@ -65,9 +70,15 @@ public:
 	UPROPERTY(EditAnywhere,BlueprintReadOnly,Category="Stats")
 	FPlayerStats PlayerStats;
 
+	
+	void Attack();
+
 protected:
 	void Move(const FInputActionValue& Value);
 	void Look(const FInputActionValue& Value);
 	void Interact();
+	bool bIsAttacking = false;
+	FTimerHandle AttackTimerHandle;
+	void OnAttackFinished();
 };
 
