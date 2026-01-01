@@ -33,6 +33,7 @@ void ABinaryChoiceButton::OnInteracted(AABinaryCharacter* PlayerCharacter)
 	if (PlayerCharacter)
 	{
 		PlayerCharacter->UpdateHealth(-ButtonData.HealthCost);
+		PlayerCharacter->UpdateHealth(-ButtonData.HealthCost);
 	}
 	
 	UBinaryGameInstance* GI = Cast<UBinaryGameInstance>(GetWorld()->GetGameInstance());
@@ -40,7 +41,6 @@ void ABinaryChoiceButton::OnInteracted(AABinaryCharacter* PlayerCharacter)
 	{
 		GI->ProcessChoice(ButtonData);
 	}
-	
 }
 
 

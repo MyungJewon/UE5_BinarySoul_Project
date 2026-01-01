@@ -3,6 +3,7 @@
   <ItemGroup>
     <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\BinarySoul.sln.DotSettings.user" />
     <None Include="..\..\BinarySoul.uproject" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
@@ -64,6 +65,12 @@
     <ClInclude Include="..\..\Source\BinarySoul\ABinaryChoiceButton.h">
       <Filter>Source\BinarySoul</Filter>
     </ClInclude>
+    <ClCompile Include="..\..\Source\BinarySoul\BinaryAnimInstance.cpp">
+      <Filter>Source\BinarySoul</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\BinaryAnimInstance.h">
+      <Filter>Source\BinarySoul</Filter>
+    </ClInclude>
     <ClCompile Include="..\..\Source\BinarySoul\BinaryGameInstance.cpp">
       <Filter>Source\BinarySoul</Filter>
     </ClCompile>
@@ -80,6 +87,18 @@
       <Filter>Source\BinarySoul</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\BinarySoul\BinarySoulTypes.h">
+      <Filter>Source\BinarySoul</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BinarySoul\BinaryTarget.cpp">
+      <Filter>Source\BinarySoul</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\BinaryTarget.h">
+      <Filter>Source\BinarySoul</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\BinarySoul\EnemySpawner.cpp">
+      <Filter>Source\BinarySoul</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\BinarySoul\EnemySpawner.h">
       <Filter>Source\BinarySoul</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\BinarySoul\UBinaryLEDWidget.cpp">

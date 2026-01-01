@@ -3,6 +3,7 @@
 #include "BinarySoulTypes.h"
 #include "Kismet/GameplayStatics.h"
 #include "ABinaryCharacter.h"
+
 UBinaryGameInstance::UBinaryGameInstance()
 {
 	LED_Array.Init(EFactionColor::None, 10);
@@ -42,7 +43,7 @@ void UBinaryGameInstance::OnBattleWon()
 	}
 	else
 	{
-		UGameplayStatics::OpenLevel(GetWorld(), FName("BattleLevel"));
+		UGameplayStatics::OpenLevel(GetWorld(), FName("MainLevel"));
 	}
 }
 void UBinaryGameInstance::GetRandomChoices(FChoiceData& OutRed, FChoiceData& OutBlue)
