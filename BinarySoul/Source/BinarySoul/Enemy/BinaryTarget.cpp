@@ -38,13 +38,12 @@ void ABinaryTarget::InitializeEnemy(const FEnemyData& Data)
     // 몽타주 저장 (TakeDamage에서 쓸 수 있게 멤버 변수로 저장해야 함)
     HitReactMontage = Data.HitReactMontage;
     DeathMontage = Data.DeathMontage;
-
+    AttackMontage = Data.AttackMontage;
     // 2. 외형(Mesh) 갈아입기
     if (Data.SkeletalMesh)
     {
         GetMesh()->SetSkeletalMesh(Data.SkeletalMesh);
         
-        // 위치 조정 (모델마다 중심점이 다를 수 있어서 보통 아래로 좀 내립니다)
         GetMesh()->SetRelativeLocation(FVector(0, 0, -90.0f)); 
         GetMesh()->SetRelativeRotation(FRotator(0, -90.0f, 0));
     }
@@ -82,6 +81,17 @@ float ABinaryTarget::TakeDamage(float DamageAmount, FDamageEvent const& DamageEv
             }
             // Destroy(); // 바로 삭제하면 HUD가 참조하다 튕길 수 있으니 딜레이 후 삭제 추천
         }
+        else 
+        {
+            if (HitReactMontage)
+            {
+                // 1. 공격 중이었다면 끊김 (몽타주는 기본적으로 덮어씌워짐)
+                PlayAnimMontage(HitReactMontage);
+                
+                // 2. 로그 확인
+                UE_LOG(LogTemp, Warning, TEXT("Enemy Staggered! (Hit Reaction)"));
+            }
+        }
     }
     return ActualDamage;
 }
@@ -90,8 +100,18 @@ void ABinaryTarget::Attack()
     UAnimInstance* AnimInstance = GetMesh()->GetAnimInstance();
     if (AnimInstance && AttackMontage && !AnimInstance->Montage_IsPlaying(AttackMontage))
     {
+        int32 SectionCount = AttackMontage->CompositeSections.Num();
         AnimInstance->Montage_Play(AttackMontage);
+        if (SectionCount > 0)
+        {
+            int32 RandomIndex = FMath::RandRange(0, SectionCount - 1);
+            FName RandomSectionName = AttackMontage->CompositeSections[RandomIndex].SectionName;
 
+            AnimInstance->Montage_Play(AttackMontage);
+            AnimInstance->Montage_JumpToSection(RandomSectionName, AttackMontage);
+
+            UE_LOG(LogTemp, Warning, TEXT("⚔Auto-Attack: Playing Section '%s'"), *RandomSectionName.ToString());
+        }
         FOnMontageEnded EndDelegate;
         EndDelegate.BindUObject(this, &ABinaryTarget::OnAttackMontageEnded);
         AnimInstance->Montage_SetEndDelegate(EndDelegate, AttackMontage);

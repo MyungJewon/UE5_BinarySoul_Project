@@ -510,16 +510,16 @@ void AABinaryCharacter::UpdateHealth(float HealthAmount)
 
 	if (HealthAmount < 0.0f)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("🩸 Ouch! HP Left: %f"), PlayerStats.CurrentHealth);
+		UE_LOG(LogTemp, Warning, TEXT("Ouch! HP Left: %f"), PlayerStats.CurrentHealth);
 	}
 	else
 	{
-		UE_LOG(LogTemp, Log, TEXT("💊 Healed! HP: %f"), PlayerStats.CurrentHealth);
+		UE_LOG(LogTemp, Log, TEXT("Healed! HP: %f"), PlayerStats.CurrentHealth);
 	}
 
 	if (PlayerStats.CurrentHealth <= 0.0f)
 	{
-		UE_LOG(LogTemp, Error, TEXT("💀 PLAYER DIED!"));
+		UE_LOG(LogTemp, Error, TEXT("PLAYER DIED!"));
 		bIsDead = true;
         
 		if (APlayerController* PC = Cast<APlayerController>(Controller))

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BinarySoulModuleRules")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Development")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+987efd7cceea77c3f9e0473f7037d90a712db95d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+18f3cd8eb1606b8adbcd43b2b2a84ae41b577818")]
 [assembly: System.Reflection.AssemblyProductAttribute("BinarySoulModuleRules")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BinarySoulModuleRules")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
